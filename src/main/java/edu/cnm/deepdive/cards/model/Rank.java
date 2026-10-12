@@ -30,4 +30,13 @@ public enum Rank {
   public String toString() {
     return abbreviation;
   }
+
+  public static Rank fromAbbreviation(String abbreviation) {
+    for (Rank rank : values()) {
+      if (rank.abbreviation.equals(abbreviation)) {
+        return rank;
+      }
+    }
+    return null;
+  }
 }
