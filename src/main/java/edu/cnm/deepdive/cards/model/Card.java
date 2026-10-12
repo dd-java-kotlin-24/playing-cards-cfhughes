@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.cards.model;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Encapsulates the attributes and basic operations of a standard playing card.
  *
@@ -10,4 +12,10 @@ public record Card(Rank rank, Suit suit) {
 
   // TODO: 2026-10-09 Implement Comparable<Card> to support sorting back into shrinkwrap order.
 
+
+  @NotNull
+  @Override
+  public String toString() {
+    return rank.toString() + suit.toString();
+  }
 }

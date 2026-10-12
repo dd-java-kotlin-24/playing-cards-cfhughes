@@ -13,4 +13,22 @@ class Deck {
         }
     }
 
+    fun shuffle() {
+        cards.shuffle()
+    }
+
+    fun deal(number: Int) : Hand {
+        val taken = cards.take(number)
+        cards.removeAll(taken)
+        return Hand(taken.toMutableList())
+    }
+
+    fun draw(): Card {
+        return cards.removeFirst()
+    }
+
+    fun isEmpty(): Boolean {
+        return cards.isEmpty()
+    }
+
 }
